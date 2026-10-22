@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Dedicated Indian GST Invoicing Print Stylesheet (A4 Portrait 210x297mm) */
+@page {
+  size: A4 portrait;
+  margin: 8mm 10mm;
+}
+
+@media print {
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    color: #0f172a !important;
+    font-family: 'Plus Jakarta Sans', Arial, "Noto Sans", sans-serif !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Completely hide app frame, sidebar, topbar, modal overlays, buttons */
+  .no-print,
+  .app-sidebar,
+  .app-navigation,
+  .modal-toolbar,
+  .download-button,
+  .print-button,
+  button {
+    display: none !important;
+  }
+
+  /* Make sure container fills 100% of printable area with no overflow */
+  .invoice-page {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #fff !important;
+    overflow: visible !important;
+  }
+
+  .invoice-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+  }
+
+  .invoice-table th,
+  .invoice-table td {
+    padding: 3.5px 4.5px !important;
+    vertical-align: top !important;
+    overflow-wrap: anywhere !important;
+    letter-spacing: normal !important;
+  }
+
+  .money,
+  .amount,
+  .currency-value {
+    white-space: nowrap !important;
+    text-align: right !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    font-variant-numeric: tabular-nums !important;
+  }
+
+  .invoice-totals,
+  .bank-details,
+  .signature-block {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+}

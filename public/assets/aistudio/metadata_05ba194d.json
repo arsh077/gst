@@ -1,0 +1,6 @@
+{
+  "name": "Legal Success Billing - GST Invoicing & Legal Services CRM",
+  "description": "Professional GST invoice creation, PDF generation, customer management, payment tracking, quotations, and reports for Legal Success India.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
